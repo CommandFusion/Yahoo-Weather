@@ -1,0 +1,123 @@
+<gui>
+  <properties>
+    <project>Yahoo! Weather</project>
+    <designer>G. Nucatola</designer>
+    <size>
+      <portrait width="320" height="480" />
+      <landscape width="480" height="320" />
+    </size>
+    <imagefolder>Assets</imagefolder>
+    <debug loaderrors="0" connectionerrors="0" />
+    <devices>
+      <device name="G2M iPad Dev">9869B9F35ADA54E672B351984458A594</device>
+      <device name="Jordan iPod Touch 1G Dev">6973E7B94A76BB351EB86BDC3313C7B2</device>
+    </devices>
+  </properties>
+  <systems>
+    <system name="Loopback" ip="127.0.0.1" port="10210" protocol="tcp" alwayson="1" accept="0" acceptBroadcasts="0" ssl="0" maxconnections="0" heartbeatRx="" heartbeatTx="" heartbeatMode="-1" eom="" connectionStatus="0" disconnectionStatus="0">
+      <cmd name="ShowInputFieldClear" target="d1" value="1">dummy</cmd>
+      <cmd name="HideInputFieldClear" target="d1" value="0">dummy</cmd>
+      <cmd name="ClearInputField" target="s1" value="">dummy</cmd>
+      <cmd name="ClearList" js="deleteList()" jsSendsCommand="False">dummy</cmd>
+      <cmd name="ShowStatusBar" target="d17931" value="1">dummy</cmd>
+    </system>
+  </systems>
+  <themes>
+    <theme type="background" name=".BackgroundStripes"><![CDATA[ background-image: url(background_stripes2.png); background-repeat: no-repeat;]]></theme>
+    <theme type="input" name=".InputText"><![CDATA[ border-width: 0px; color: Black; font-size: 14px; font-family: 'Arial Black'; text-align: left; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".ListText"><![CDATA[ color: #000000; font-size: 16px; font-family: 'Arial Black'; text-align: left; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="button" name=".TransparentButton[state='0']"><![CDATA[padding: 0px 0px 0px 0px; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".TransparentButton[state='1']"><![CDATA[padding: 0px 0px 0px 0px; color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".ClearInputField[state='0']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(list_text_field_cancel.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".ClearInputField[state='1']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(list_text_field_cancel.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="background" name=".WeatherBG"><![CDATA[ background-image: url(yahoowallpaper2.png); background-repeat: no-repeat;]]></theme>
+    <theme type="text" name=".TodayTemperature"><![CDATA[ text-shadow: rgba(0,0,0,1) 1px 1px 1px; color: White; font-size: 48px; font-family: 'Arial'; text-align: right; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".ForecastHighTemp"><![CDATA[ text-shadow: rgba(0,0,0,1) 1px 1px 1px; color: Red; font-size: 16px; font-family: 'Arial'; text-align: right; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".ForecastLowTemp"><![CDATA[ text-shadow: rgba(0,0,0,1) 1px 1px 1px; color: Blue; font-size: 16px; font-family: 'Arial'; text-align: right; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".Location"><![CDATA[ text-shadow: rgba(0,0,0,1) 1px 1px 1px; color: White; font-size: 24px; font-family: 'Arial'; text-align: center; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".TodayConditionText"><![CDATA[ color: White; font-size: 22px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".TodayConditionDate"><![CDATA[ color: White; font-size: 18px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".ForecastConditionText"><![CDATA[ color: White; font-size: 14px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="text" name=".ForecastConditionDate"><![CDATA[ color: White; font-size: 12px; font-family: 'Arial'; text-align: left; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="button" name=".Back[state='0']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(back_btn.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".Back[state='1']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(back_btn.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="text" name=".AlertText"><![CDATA[ text-shadow: rgba(0,0,0,1) 1px 1px 1px; color: White; font-size: 18px; font-family: 'Arial Black'; text-align: center; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
+    <theme type="background" name=".CompanyBG"><![CDATA[ background-image: url(landscapeBG.png); background-repeat: no-repeat;]]></theme>
+  </themes>
+  <scripts>
+    <script name="yahoo-woeid-v1.0.js" />
+    <script name="yahoo-weather-v1.0.js" />
+  </scripts>
+  <page name="Search" j="0" transition="moveIn" subtype="fromLeft" time="0.5" ease="" start="1">
+    <portrait t="BackgroundStripes">
+      <timer j="10000" interval="10" repeatCount="1">
+        <command>ShowStatusBar</command>
+      </timer>
+      <img x="0" y="20" w="320" h="44" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">Search_bar_grey2.png</img>
+      <input j="0" s="1" x="31" y="29" w="249" h="27" pass="0" autoFocus="0" f="0" t="InputText" l="0">Enter a city name...</input>
+      <list j="1" x="0" y="64" w="320" h="416" headerSub="" titleSub="" contentSub="ListElement" footerSub="" orientation="v" l="0" swipedelete="0" />
+      <subpage name="ClearInputField" x="289" y="33" j="1" transition1="None" subtype1="None" time1="0" ease1="" transition2="None" subtype2="None" time2="0" ease2="" clickthrough="0" topmost="0" v="1" l="0" />
+      <subpage name="UserMessage" x="0" y="0" j="2" transition1="fade" subtype1="None" time1="0.5" ease1="easeInEaseOut" transition2="fade" subtype2="None" time2="0.5" ease2="easeInEaseOut" clickthrough="0" topmost="0" v="0" l="0" />
+    </portrait>
+    <landscape t="CompanyBG" />
+  </page>
+  <page name="DisplayWeather" j="0" transition="moveIn" subtype="fromRight" time="0.5" ease="">
+    <portrait t="WeatherBG">
+      <img x="0" y="20" w="320" h="44" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">weather_display_topbar.png</img>
+      <img x="0" y="86" w="320" h="260" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">weather_display_bg.png</img>
+      <img x="0" y="348" w="159" h="130" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">weather_display_bg.png</img>
+      <img x="163" y="348" w="159" h="130" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">weather_display_bg.png</img>
+      <img x="0" y="52" w="250" h="180" j="12" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">http://l.yimg.com/a/i/us/nws/weather/gr/18d.png</img>
+      <img x="0" y="328" w="125" h="90" j="21" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">http://l.yimg.com/a/i/us/nws/weather/gr/18d.png</img>
+      <img x="163" y="328" w="125" h="90" j="26" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">http://l.yimg.com/a/i/us/nws/weather/gr/18d.png</img>
+      <txt j="13" x="179" y="114" w="136" h="55" t="TodayTemperature" wrap="False" l="0">36 °C</txt>
+      <txt j="22" x="96" y="354" w="60" h="20" t="ForecastHighTemp" wrap="False" l="0">12 °C</txt>
+      <txt j="23" x="96" y="372" w="60" h="20" t="ForecastLowTemp" wrap="False" l="0">-1 °C</txt>
+      <txt j="27" x="255" y="354" w="60" h="20" t="ForecastHighTemp" wrap="False" l="0">12 °C</txt>
+      <txt j="28" x="255" y="372" w="60" h="20" t="ForecastLowTemp" wrap="False" l="0">-1 °C</txt>
+      <txt j="11" x="0" y="20" w="320" h="44" t="Location" wrap="False" l="0">Place</txt>
+      <txt j="14" x="20" y="179" w="280" h="75" t="TodayConditionText" wrap="True" l="0">Current Condition Text</txt>
+      <txt j="15" x="12" y="258" w="300" h="75" t="TodayConditionDate" wrap="True" l="0">Today Date And Time</txt>
+      <txt j="24" x="16" y="390" w="130" h="58" t="ForecastConditionText" wrap="True" l="0">Today Forecast Text</txt>
+      <txt j="25" x="6" y="441" w="150" h="37" t="ForecastConditionDate" wrap="False" l="0">Today Date Short</txt>
+      <txt j="29" x="174" y="390" w="130" h="58" t="ForecastConditionText" wrap="True" l="0">Tomorrow Forecast Text</txt>
+      <txt j="30" x="164" y="441" w="150" h="37" t="ForecastConditionDate" wrap="False" l="0">Tomorrow Date Short</txt>
+      <btn j="0" x="5" y="28" w="50" h="29" t="Back" flip="None" sim="0" l="0" s="1">
+        <actions>
+          <action>
+            <press delay="300" hold="0" repeat="0" js="CF.flipToPage(&quot;Search&quot;)" />
+          </action>
+        </actions>
+        <inactive s="0">
+        </inactive>
+        <active s="0">
+        </active>
+      </btn>
+      <subpage name="UserMessage" x="0" y="0" j="2" transition1="fade" subtype1="None" time1="0.5" ease1="easeInEaseOut" transition2="fade" subtype2="None" time2="0.5" ease2="easeInEaseOut" clickthrough="0" topmost="0" v="0" l="0" />
+    </portrait>
+    <landscape t="CompanyBG" />
+  </page>
+  <subpage name="ListElement" w="320" h="56" clip="1">
+    <img x="0" y="0" w="320" h="56" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">list_item2.png</img>
+    <txt j="10" x="4" y="0" w="261" h="56" t="ListText" wrap="False" l="0">List Element</txt>
+    <btn j="10" x="0" y="0" w="320" h="56" t="TransparentButton" flip="None" sim="0" l="0" s="1">
+      <inactive s="0">
+      </inactive>
+      <active s="0">
+      </active>
+    </btn>
+  </subpage>
+  <subpage name="ClearInputField" w="20" h="19" clip="1">
+    <btn j="0" x="0" y="0" w="20" h="19" t="ClearInputField" flip="None" sim="0" l="0" s="1" js="deleteList()">
+      <inactive s="0">
+      </inactive>
+      <active s="0">
+      </active>
+    </btn>
+  </subpage>
+  <subpage name="UserMessage" w="320" h="480" clip="1">
+    <img x="0" y="0" w="320" h="480" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">half_opacity_bg.png</img>
+    <img x="15" y="154" w="290" h="173" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">message_box.png<gesture name="New Gesture" type="tap" taps="1" touches="1"><action phase="begin" j="d2" value="0" /></gesture></img>
+    <txt j="2" x="40" y="200" w="240" h="80" t="AlertText" wrap="True" l="0">User Message</txt>
+  </subpage>
+</gui>
