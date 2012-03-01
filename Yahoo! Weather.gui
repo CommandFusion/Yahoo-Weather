@@ -11,6 +11,7 @@
     <devices>
       <device name="G2M iPad Dev">9869B9F35ADA54E672B351984458A594</device>
       <device name="Jordan iPod Touch 1G Dev">6973E7B94A76BB351EB86BDC3313C7B2</device>
+      <device name="Jorda iPhone 4 Dev">9678BB7AF4B5DEAD2D2CEF22C881CD84</device>
     </devices>
   </properties>
   <systems>

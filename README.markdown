@@ -15,4 +15,5 @@ Weather condition and one day forecast with search using Yahoo! Geoplanet
 ## Links
 
 Yahoo! Geoplanet: http://developer.yahoo.com/geo/geoplanet/
+
 Yahoo! RSS Weather Feed: http://developer.yahoo.com/weather/
