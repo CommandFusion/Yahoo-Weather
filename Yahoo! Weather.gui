@@ -101,7 +101,7 @@
   <subpage name="ListElement" w="320" h="56" clip="1">
     <img x="0" y="0" w="320" h="56" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">list_item2.png</img>
     <txt j="10" x="4" y="0" w="261" h="56" t="ListText" wrap="False" l="0">List Element</txt>
-    <btn j="10" x="0" y="0" w="320" h="56" t="TransparentButton" flip="None" sim="0" l="0" s="1">
+    <btn j="0" x="0" y="0" w="320" h="56" t="TransparentButton" flip="None" sim="0" l="0" s="1" js="getWeather(listIndex)">
       <inactive s="0">
       </inactive>
       <active s="0">

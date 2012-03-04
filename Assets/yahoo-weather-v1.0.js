@@ -1,9 +1,9 @@
-function getWeather(j,v,t)
+function getWeather(listIndex)
 //request weather at WOEID
 		{
 		CF.request(
 		"http://weather.yahooapis.com/forecastrss?w=" +
-		decodedJSONObj.places.place[/:(\d*):/.exec(j)[1]].woeid +		
+		decodedJSONObj.places.place[listIndex].woeid +		
 		"&u=c", {"Accept-Language" : "en-US"}, self.parseWeather);
 		}
 

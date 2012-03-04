@@ -23,33 +23,23 @@ var decodedJSONObj	//object built from the decoded JSON string
 function deleteList(){
 //Unwatches and deletes the list, invoked on pageflip
 	CF.setJoins([{join: "d1", value: 0}, {join: "s1", value:""}])
-	CF.listInfo("l1", function(list, count)
-				{
-					for (var i = 0; i < count; i++) {CF.unwatch(CF.ObjectPressedEvent, "l1:" + i + ":d10")}
-					CF.listRemove(list)
-				})
+	CF.listRemove("l1")
 }	
 	
 function getWoeid(status, headers, body){
 //decodes response and builds the array of the returned places
 		if (status == 200) 	
 			{
-			CF.listInfo("l1", function(list, count)
+			CF.listRemove("l1")																			//removes the list
+			decodedJSONObj = JSON.parse(body)															//parse JSON string
+			if (decodedJSONObj.places.count > 0)														//if there are results to the query
 				{
-					for (var i = 0; i < count; i++) {CF.unwatch(CF.ObjectPressedEvent, "l1:" + i + ":d10")}		//unwatches list items to prevent multiple calls
-					CF.listRemove(list)																			//removes the list
-					decodedJSONObj = JSON.parse(body)															//parse JSON string
-					if (decodedJSONObj.places.count > 0)														//if there are results to the query
+					for (var i = 0; i < decodedJSONObj.places.count; i++) 								//builds list
 						{
-							for (var i = 0; i < decodedJSONObj.places.count; i++) 								//builds list
-								{
-									var listItem = decodedJSONObj.places.place[i].name + ", " + decodedJSONObj.places.place[i].country
-									CF.listAdd("l1", [{"s10": listItem}])
-									var addedListIndex = "l1:" + i + ":" + "d10"
-									CF.watch(CF.ObjectPressedEvent, addedListIndex , getWeather)
-								}
-						}			
-				})
+							var listItem = decodedJSONObj.places.place[i].name + ", " + decodedJSONObj.places.place[i].country
+							CF.listAdd("l1", [{"s10": listItem}])
+						}
+				}			
 			}
 }		
 
