@@ -21,7 +21,7 @@ function searchWoeid(join, value)
 var decodedJSONObj	//object built from the decoded JSON string
 
 function deleteList(){
-//Unwatches and deletes the list, invoked on pageflip
+//Deletes the list, invoked on pageflip
 	CF.setJoins([{join: "d1", value: 0}, {join: "s1", value:""}])
 	CF.listRemove("l1")
 }	
@@ -34,11 +34,10 @@ function getWoeid(status, headers, body){
 			decodedJSONObj = JSON.parse(body)															//parse JSON string
 			if (decodedJSONObj.places.count > 0)														//if there are results to the query
 				{
-					for (var i = 0; i < decodedJSONObj.places.count; i++) 								//builds list
-						{
-							var listItem = decodedJSONObj.places.place[i].name + ", " + decodedJSONObj.places.place[i].country
-							CF.listAdd("l1", [{"s10": listItem}])
-						}
+					var _list = []																		//builds list
+					decodedJSONObj.places.place.forEach(function(val){
+						_list.push({"s10": val.name + ", " + val.country})})
+					CF.listAdd("l1", _list)																//displays the list
 				}			
 			}
 }		
@@ -52,4 +51,4 @@ CF.userMain = function ()
 	{
 	CF.watch(CF.InputFieldEditedEvent, "s1", searchWoeid)
 	CF.watch(CF.PageFlipEvent, onPageFlip, true)
-};	
+}	
