@@ -44,6 +44,8 @@
     <theme type="button" name=".Back[state='1']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(back_btn.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
     <theme type="text" name=".AlertText"><![CDATA[ text-shadow: rgba(0,0,0,1) 1px 1px 1px; color: White; font-size: 18px; font-family: 'Arial Black'; text-align: center; vertical-align: middle; font-weight: normal; font-style: none; text-decoration: none; display: table-cell;]]></theme>
     <theme type="background" name=".CompanyBG"><![CDATA[ background-image: url(landscapeBG.png); background-repeat: no-repeat;]]></theme>
+    <theme type="button" name=".LocationButton[state='0']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(location-button-released.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
+    <theme type="button" name=".LocationButton[state='1']"><![CDATA[padding: 0px 0px 0px 0px; background-image: url(location-button-pressed.png); color: White; font-size: 12px; font-family: 'Verdana'; font-weight: normal; font-style: none; text-decoration: none; text-align: center; vertical-align: middle; display: table-cell; box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);]]></theme>
   </themes>
   <scripts>
     <script name="yahoo-woeid-v1.0.js" />
@@ -54,11 +56,19 @@
       <timer j="10000" interval="10" repeatCount="1">
         <command>ShowStatusBar</command>
       </timer>
-      <img x="0" y="20" w="320" h="44" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">Search_bar_grey2.png</img>
-      <input j="0" s="1" x="31" y="29" w="249" h="27" pass="0" autoFocus="0" f="0" t="InputText" l="0">Enter a city name...</input>
+      <img x="0" y="20" w="320" h="44" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">search-bar-bg.png</img>
+      <img x="0" y="26" w="320" h="31" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">search-bar-field.png</img>
+      <img x="6" y="32" w="19" h="20" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">search-bar-icon.png</img>
+      <input j="0" s="1" x="31" y="29" w="182" h="27" pass="0" autoFocus="0" f="0" t="InputText" l="0">Enter a city name...</input>
       <list j="1" x="0" y="64" w="320" h="416" headerSub="" titleSub="" contentSub="ListElement" footerSub="" orientation="v" l="0" swipedelete="0" />
-      <subpage name="ClearInputField" x="289" y="33" j="1" transition1="None" subtype1="None" time1="0" ease1="" transition2="None" subtype2="None" time2="0" ease2="" clickthrough="0" topmost="0" v="1" l="0" />
+      <subpage name="ClearInputField" x="222" y="33" j="1" transition1="None" subtype1="None" time1="0" ease1="" transition2="None" subtype2="None" time2="0" ease2="" clickthrough="0" topmost="0" v="1" l="0" />
       <subpage name="UserMessage" x="0" y="0" j="2" transition1="fade" subtype1="None" time1="0.5" ease1="easeInEaseOut" transition2="fade" subtype2="None" time2="0.5" ease2="easeInEaseOut" clickthrough="0" topmost="0" v="0" l="0" />
+      <btn j="0" x="256" y="27" w="60" h="29" t="LocationButton" flip="None" sim="1" l="0" s="1">
+        <inactive s="0">
+        </inactive>
+        <active s="0">
+        </active>
+      </btn>
     </portrait>
     <landscape t="CompanyBG" />
   </page>

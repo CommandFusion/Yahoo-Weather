@@ -4,7 +4,7 @@ function getWeather(listIndex)
 		CF.request(
 		"http://weather.yahooapis.com/forecastrss?w=" +
 		decodedJSONObj.places.place[listIndex].woeid +		
-		"&u=c", {"Accept-Language" : "en-US"}, self.parseWeather);
+		"&u=c", {"Accept-Language" : "en-US"}, parseWeather);
 		}
 
 function parseWeather(status, headers, body)

@@ -51,4 +51,40 @@ CF.userMain = function ()
 	{
 	CF.watch(CF.InputFieldEditedEvent, "s1", searchWoeid)
 	CF.watch(CF.PageFlipEvent, onPageFlip, true)
-}	
+}
+	
+/*
+function initGeolocation(){
+	if (navigator.geolocation){
+          // Call getCurrentPosition with success and failure callbacks
+          navigator.geolocation.getCurrentPosition( success, fail );
+     }
+     else
+     {
+          CF.log("Sorry, your browser does not support geolocation services.");
+     }
+}
+
+function success(position){
+	CF.log(position.coords.latitude + "," + position.coords.longitude)
+	CF.request(
+	"http://where.yahooapis.com/geocode?location=" +
+	position.coords.latitude +
+	"," +
+	position.coords.longitude +
+	"&flags=J&gflags=R&appid=" + 
+	"KL1y8DvV34GdHB7TszqFaU0Mh05_vFl.k2FHwifHyaYepZqEPv13T8g19aPhqQ--", {"Accept-Language" : "en-US"}, getWoeidOnLocalize);
+}
+
+function fail(){
+	CF.log("Could not retrive location. Error unknown")
+}
+
+function getWoeidOnLocalize(status, headers, body){
+	if (status == 200){
+		CF.request(
+		"http://weather.yahooapis.com/forecastrss?w=" +
+		JSON.parse(body).ResultSet.Results[0].woeid +		
+		"&u=c", {"Accept-Language" : "en-US"}, parseWeather);
+	}
+}*/
