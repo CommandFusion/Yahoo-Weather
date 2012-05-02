@@ -1,6 +1,16 @@
 function getWeather(listIndex)
 //request weather at WOEID
 		{
+		CF.setJoin("s100", 
+			"http://maps.google.com/maps/api/staticmap?center=" + 
+			decodedJSONObj.places.place[listIndex].centroid.latitude +
+			"," +
+			decodedJSONObj.places.place[listIndex].centroid.longitude +
+			"&zoom=6&format=png&maptype=roadmap&mobile=false&markers=label:S|" + 
+			decodedJSONObj.places.place[listIndex].centroid.latitude +
+			"," +
+			decodedJSONObj.places.place[listIndex].centroid.longitude +
+			"&size=320x480&key=ABQIAAAAQ127-gVdIM3nq38RBYCN-RRrZQw2CF6YFdWEO75V5821rhw7fBTGniMwnKw_COoRSFJ3rNONzbqycw&sensor=false")
 		CF.request(
 		"http://weather.yahooapis.com/forecastrss?w=" +
 		decodedJSONObj.places.place[listIndex].woeid +		

@@ -15,7 +15,7 @@
     </devices>
   </properties>
   <systems>
-    <system name="Loopback" ip="127.0.0.1" port="10210" protocol="tcp" alwayson="1" accept="0" acceptBroadcasts="0" ssl="0" maxconnections="0" heartbeatRx="" heartbeatTx="" heartbeatMode="-1" eom="" connectionStatus="0" disconnectionStatus="0">
+    <system name="Loopback" ip="127.0.0.1" port="10210" protocol="tcp" alwayson="1" offlinequeue="1" accept="0" acceptBroadcasts="0" ssl="0" maxconnections="0" heartbeatRx="" heartbeatTx="" heartbeatMode="-1" eom="" connectionStatus="0" disconnectionStatus="0">
       <cmd name="ShowInputFieldClear" target="d1" value="1">dummy</cmd>
       <cmd name="HideInputFieldClear" target="d1" value="0">dummy</cmd>
       <cmd name="ClearInputField" target="s1" value="">dummy</cmd>
@@ -63,7 +63,7 @@
       <list j="1" x="0" y="64" w="320" h="416" headerSub="" titleSub="" contentSub="ListElement" footerSub="" orientation="v" l="0" swipedelete="0" />
       <subpage name="ClearInputField" x="222" y="33" j="1" transition1="None" subtype1="None" time1="0" ease1="" transition2="None" subtype2="None" time2="0" ease2="" clickthrough="0" topmost="0" v="1" l="0" />
       <subpage name="UserMessage" x="0" y="0" j="2" transition1="fade" subtype1="None" time1="0.5" ease1="easeInEaseOut" transition2="fade" subtype2="None" time2="0.5" ease2="easeInEaseOut" clickthrough="0" topmost="0" v="0" l="0" />
-      <btn j="0" x="256" y="27" w="60" h="29" t="LocationButton" flip="None" sim="1" l="0" s="1">
+      <btn j="0" x="256" y="27" w="60" h="29" t="LocationButton" flip="None" sim="1" l="0" s="1" js="initGeolocation()">
         <inactive s="0">
         </inactive>
         <active s="0">
@@ -72,8 +72,9 @@
     </portrait>
     <landscape t="CompanyBG" />
   </page>
-  <page name="DisplayWeather" j="0" transition="moveIn" subtype="fromRight" time="0.5" ease="">
+  <page name="DisplayWeather" j="0" transition="moveIn" subtype="fromRight" time="0" ease="">
     <portrait t="WeatherBG">
+      <img x="0" y="0" w="320" h="480" j="100" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="1" />
       <img x="0" y="20" w="320" h="44" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">weather_display_topbar.png</img>
       <img x="0" y="86" w="320" h="260" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">weather_display_bg.png</img>
       <img x="0" y="348" w="159" h="130" j="0" clickthrough="0" refresh="0" l="0" noCache="0" downloadIndicator="0" clearOnURLChange="0">weather_display_bg.png</img>
